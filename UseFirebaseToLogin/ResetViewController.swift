@@ -10,20 +10,22 @@ import UIKit
 
 class ResetViewController: UIViewController {
     
+    var emailTxtFld: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "重設密碼"
         self.view.backgroundColor = UIColor(colorLiteralRed: 205, green: 0, blue: 255, alpha: 1)
         
         // 生成email輸入框
-        let emailTxtFld: UITextField = UITextField()
-        emailTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height / 2 - 15 - 10 - 64, width: self.view.frame.size.width / 2, height: 30)
-        emailTxtFld.font = UIFont.systemFont(ofSize: 20)
-        emailTxtFld.backgroundColor = UIColor.white
-        emailTxtFld.textAlignment = NSTextAlignment.left
-        emailTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
-        emailTxtFld.placeholder = "請輸入email"
-        self.view.addSubview(emailTxtFld)
+        self.emailTxtFld = UITextField()
+        self.emailTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height / 2 - 15 - 10 - 64, width: self.view.frame.size.width / 2, height: 30)
+        self.emailTxtFld.font = UIFont.systemFont(ofSize: 20)
+        self.emailTxtFld.backgroundColor = UIColor.white
+        self.emailTxtFld.textAlignment = NSTextAlignment.left
+        self.emailTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
+        self.emailTxtFld.placeholder = "請輸入email"
+        self.view.addSubview(self.emailTxtFld)
         
         // 生成重設按鈕
         let resetBtn: UIButton = UIButton()

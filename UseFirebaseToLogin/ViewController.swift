@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var emailTxtFld: UITextField!
+    var passwordTxtFld: UITextField!
     var registerViewController: RegisterViewController?
     var resetViewController: ResetViewController?
     
@@ -21,24 +23,24 @@ class ViewController: UIViewController {
         self.navigationItem.title = "登入"
         
         // 生成email輸入框
-        let emailTxtFld: UITextField = UITextField()
-        emailTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height / 2 - 15 - 10 - 64, width: self.view.frame.size.width / 2, height: 30)
-        emailTxtFld.font = UIFont.systemFont(ofSize: 20)
-        emailTxtFld.backgroundColor = UIColor.white
-        emailTxtFld.textAlignment = NSTextAlignment.left
-        emailTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
-        emailTxtFld.placeholder = "請輸入email"
-        self.view.addSubview(emailTxtFld)
+        self.emailTxtFld = UITextField()
+        self.emailTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height / 2 - 15 - 10 - 64, width: self.view.frame.size.width / 2, height: 30)
+        self.emailTxtFld.font = UIFont.systemFont(ofSize: 20)
+        self.emailTxtFld.backgroundColor = UIColor.white
+        self.emailTxtFld.textAlignment = NSTextAlignment.left
+        self.emailTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
+        self.emailTxtFld.placeholder = "請輸入email"
+        self.view.addSubview(self.emailTxtFld)
         
         // 生成密碼輸入框
-        let passwordTxtFld: UITextField = UITextField()
-        passwordTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: emailTxtFld.frame.origin.y + emailTxtFld.frame.size.height + 20, width: self.view.frame.size.width / 2, height: 30)
-        passwordTxtFld.font = UIFont.systemFont(ofSize: 20)
-        passwordTxtFld.backgroundColor = UIColor.white
-        passwordTxtFld.textAlignment = NSTextAlignment.left
-        passwordTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
-        passwordTxtFld.placeholder = "請輸入密碼"
-        self.view.addSubview(passwordTxtFld)
+        self.passwordTxtFld = UITextField()
+        self.passwordTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: emailTxtFld.frame.origin.y + emailTxtFld.frame.size.height + 20, width: self.view.frame.size.width / 2, height: 30)
+        self.passwordTxtFld.font = UIFont.systemFont(ofSize: 20)
+        self.passwordTxtFld.backgroundColor = UIColor.white
+        self.passwordTxtFld.textAlignment = NSTextAlignment.left
+        self.passwordTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
+        self.passwordTxtFld.placeholder = "請輸入密碼"
+        self.view.addSubview(self.passwordTxtFld)
         
         // 生成登入按鈕
         let loginBtn: UIButton = UIButton()

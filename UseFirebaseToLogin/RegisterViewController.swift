@@ -10,30 +10,33 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    var emailTxtFld: UITextField!
+    var passwordTxtFld: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "註冊"
         self.view.backgroundColor = UIColor(colorLiteralRed: 255, green: 230, blue: 0, alpha: 1)
         
         // 生成email輸入框
-        let emailTxtFld: UITextField = UITextField()
-        emailTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height / 2 - 15 - 10 - 64, width: self.view.frame.size.width / 2, height: 30)
-        emailTxtFld.font = UIFont.systemFont(ofSize: 20)
-        emailTxtFld.backgroundColor = UIColor.white
-        emailTxtFld.textAlignment = NSTextAlignment.left
-        emailTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
-        emailTxtFld.placeholder = "請輸入email"
-        self.view.addSubview(emailTxtFld)
+        self.emailTxtFld = UITextField()
+        self.emailTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height / 2 - 15 - 10 - 64, width: self.view.frame.size.width / 2, height: 30)
+        self.emailTxtFld.font = UIFont.systemFont(ofSize: 20)
+        self.emailTxtFld.backgroundColor = UIColor.white
+        self.emailTxtFld.textAlignment = NSTextAlignment.left
+        self.emailTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
+        self.emailTxtFld.placeholder = "請輸入email"
+        self.view.addSubview(self.emailTxtFld)
         
         // 生成密碼輸入框
-        let passwordTxtFld: UITextField = UITextField()
-        passwordTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: emailTxtFld.frame.origin.y + emailTxtFld.frame.size.height + 20, width: self.view.frame.size.width / 2, height: 30)
-        passwordTxtFld.font = UIFont.systemFont(ofSize: 20)
-        passwordTxtFld.backgroundColor = UIColor.white
-        passwordTxtFld.textAlignment = NSTextAlignment.left
-        passwordTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
-        passwordTxtFld.placeholder = "請輸入密碼"
-        self.view.addSubview(passwordTxtFld)
+        self.passwordTxtFld = UITextField()
+        self.passwordTxtFld.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: emailTxtFld.frame.origin.y + emailTxtFld.frame.size.height + 20, width: self.view.frame.size.width / 2, height: 30)
+        self.passwordTxtFld.font = UIFont.systemFont(ofSize: 20)
+        self.passwordTxtFld.backgroundColor = UIColor.white
+        self.passwordTxtFld.textAlignment = NSTextAlignment.left
+        self.passwordTxtFld.clearButtonMode = UITextFieldViewMode.unlessEditing // 清除按鈕
+        self.passwordTxtFld.placeholder = "請輸入密碼"
+        self.view.addSubview(self.passwordTxtFld)
         
         // 生成註冊按鈕
         let registerBtn: UIButton = UIButton()
@@ -49,11 +52,6 @@ class RegisterViewController: UIViewController {
         // 註冊tab事件，點選瑩幕任一處可關閉瑩幕小鍵盤
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Callback
