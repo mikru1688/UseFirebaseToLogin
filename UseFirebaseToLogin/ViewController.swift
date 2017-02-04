@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     
     // 提示錯誤訊息
     func showMsg() {
-        let alertController = UIAlertController(title: "提示", message: "請輸入email或密碼", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "提示", message: "請輸入email和密碼", preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "確定", style: .default, handler: nil)
         
