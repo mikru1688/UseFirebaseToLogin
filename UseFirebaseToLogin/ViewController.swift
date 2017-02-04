@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         
         // 生成註冊按鈕
         let registerBtn: UIButton = UIButton()
-        registerBtn.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height - 20 - 30 - 20 - 30, width: self.view.frame.size.width / 2, height: 30)
+        registerBtn.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: self.view.frame.size.height - 20 - 30 - 20 - 30 - 20 - 30, width: self.view.frame.size.width / 2, height: 30)
         registerBtn.titleLabel?.font = UIFont.systemFont(ofSize: registerBtn.frame.height * 0.8)
         registerBtn.setTitle("註冊", for: .normal)
         registerBtn.setTitleColor(UIColor.white, for: .normal)
@@ -75,6 +75,17 @@ class ViewController: UIViewController {
         resetBtn.addTarget(self, action: #selector(ViewController.onClickReset(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(resetBtn)
         
+        // 生成登出按鈕
+        let logoutBtn: UIButton = UIButton()
+        logoutBtn.frame = CGRect(x: self.view.frame.size.width / 2 / 2, y: resetBtn.frame.origin.y + resetBtn.frame.size.height + 20, width: self.view.frame.size.width / 2, height: 30)
+        logoutBtn.titleLabel?.font = UIFont.systemFont(ofSize: logoutBtn.frame.height * 0.8)
+        logoutBtn.setTitle("登出", for: .normal)
+        logoutBtn.setTitleColor(UIColor.white, for: .normal)
+        logoutBtn.layer.cornerRadius = 10
+        logoutBtn.backgroundColor = UIColor.lightGray
+        logoutBtn.addTarget(self, action: #selector(ViewController.onClickLogout(_:)), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(logoutBtn)
+        
         // 註冊tab事件，點選瑩幕任一處可關閉瑩幕小鍵盤
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
@@ -84,6 +95,11 @@ class ViewController: UIViewController {
     // ---------------------------------------------------------------------
     // 登入
     func onClickLogin(_ sender: UIButton) {
+        
+    }
+    
+    // 登出
+    func onClickLogout(_ sender: UIButton) {
         
     }
     
