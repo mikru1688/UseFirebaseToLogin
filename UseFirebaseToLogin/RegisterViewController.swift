@@ -58,13 +58,6 @@ class RegisterViewController: UIViewController {
     // ---------------------------------------------------------------------
     // 註冊
     func onClickRegister(_ sender: UIButton) {
-        // email和密碼為必填欄位
-        if self.emailTxtFld.text == "" || self.passwordTxtFld.text == "" {
-            self.showMsg()
-            return
-        }
-        
-        
         
     }
     
@@ -74,8 +67,8 @@ class RegisterViewController: UIViewController {
     }
     
     // 提示錯誤訊息
-    func showMsg() {
-        let alertController = UIAlertController(title: "提示", message: "請輸入email和密碼", preferredStyle: .alert)
+    func showMsg(_ message: String) {
+        let alertController = UIAlertController(title: "提示", message: message, preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "確定", style: .default, handler: nil)
         
