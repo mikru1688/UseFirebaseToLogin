@@ -35,11 +35,32 @@ class ResetViewController: UIViewController {
         resetBtn.backgroundColor = UIColor.lightGray
         resetBtn.addTarget(self, action: #selector(ResetViewController.onClickRegister(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(resetBtn)
+        
+        // 註冊tab事件，點選瑩幕任一處可關閉瑩幕小鍵盤
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
     }
     
+    // MARK: - Callback
+    // ---------------------------------------------------------------------
     // 重設密碼
     func onClickRegister(_ sender: UIButton) {
         
     }
     
+    // 關閉瑩幕小鍵盤
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    // 提示錯誤訊息
+    func showMsg() {
+        let alertController = UIAlertController(title: "提示", message: "請輸入email", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "確定", style: .default, handler: nil)
+        
+        alertController.addAction(cancel)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

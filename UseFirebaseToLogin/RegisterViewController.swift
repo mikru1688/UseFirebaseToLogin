@@ -45,6 +45,10 @@ class RegisterViewController: UIViewController {
         registerBtn.backgroundColor = UIColor.lightGray
         registerBtn.addTarget(self, action: #selector(RegisterViewController.onClickRegister(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(registerBtn)
+        
+        // 註冊tab事件，點選瑩幕任一處可關閉瑩幕小鍵盤
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,10 +56,26 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // MARK: - Callback
+    // ---------------------------------------------------------------------
     // 註冊
     func onClickRegister(_ sender: UIButton) {
         
     }
     
+    // 關閉瑩幕小鍵盤
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    // 提示錯誤訊息
+    func showMsg() {
+        let alertController = UIAlertController(title: "提示", message: "請輸入email或密碼", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "確定", style: .default, handler: nil)
+        
+        alertController.addAction(cancel)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

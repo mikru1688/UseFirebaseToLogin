@@ -101,4 +101,15 @@ class ViewController: UIViewController {
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
+    
+    // 提示錯誤訊息
+    func showMsg() {
+        let alertController = UIAlertController(title: "提示", message: "請輸入email或密碼", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "確定", style: .default, handler: nil)
+        
+        alertController.addAction(cancel)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
