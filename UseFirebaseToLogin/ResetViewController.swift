@@ -33,8 +33,13 @@ class ResetViewController: UIViewController {
         resetBtn.setTitleColor(UIColor.white, for: .normal)
         resetBtn.layer.cornerRadius = 10
         resetBtn.backgroundColor = UIColor.lightGray
-        resetBtn.addTarget(self, action: #selector(ViewController.onClickRegister(_:)), for: UIControlEvents.touchUpInside)
+        resetBtn.addTarget(self, action: #selector(ResetViewController.onClickRegister(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(resetBtn)
+    }
+    
+    // 重設密碼
+    func onClickRegister(_ sender: UIButton) {
+        
     }
     
 }

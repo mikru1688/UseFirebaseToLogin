@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController {
         registerBtn.setTitleColor(UIColor.white, for: .normal)
         registerBtn.layer.cornerRadius = 10
         registerBtn.backgroundColor = UIColor.lightGray
-        registerBtn.addTarget(self, action: #selector(ViewController.onClickRegister(_:)), for: UIControlEvents.touchUpInside)
+        registerBtn.addTarget(self, action: #selector(RegisterViewController.onClickRegister(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(registerBtn)
     }
     
@@ -53,14 +53,9 @@ class RegisterViewController: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // 註冊
+    func onClickRegister(_ sender: UIButton) {
+        
+    }
     
 }
